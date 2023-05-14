@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "target": "es2019",
+    "lib": ["es2020", "DOM"],
+    "newLine": "LF",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    // "strict": true,
+    // "strictNullChecks": false,
+    "sourceMap": true,
+    // "skipLibCheck": true,
+    // "skipDefaultLibCheck": true,
+    // "importHelpers": true,
+    // "downlevelIteration": true,
+    // "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // "noEmitOnError": true,
+    // "noUnusedLocals": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "useUnknownInCatchVariables": false,
+    // "noUnusedParameters": true,
+    // "forceConsistentCasingInFileNames": true,
+    // "suppressImplicitAnyIndexErrors": true,
+    // "allowSyntheticDefaultImports": true,
+    "typeRoots": ["node_modules/@types", "typings"],
+    "paths": {
+      "@utils/*": ["utils/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist", "**/.*/"]
+}
