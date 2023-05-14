@@ -31,6 +31,9 @@ Promise.resolve().then(() => fetchAndTraceUserById(2));
 Promise.resolve().then(() => setImmediate(() => console.log("Immediate 2")));
 
 // Code to be executed in the next iteration
+process.nextTick(() => promisedConsoleForUser(1));
+
+// Code to be executed in the next iteration
 promisedConsoleForUser(0);
 
 console.log("Console");
