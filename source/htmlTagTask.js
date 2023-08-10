@@ -1,4 +1,4 @@
-const validElements = new Set([
+const validElements = [
   "<b>",
   "</b>",
   "<i>",
@@ -9,21 +9,14 @@ const validElements = new Set([
   "</div>",
   "<p>",
   "</p>"
-]);
-
-function createRegexFromSet(elementsSet) {
-  const escapedElements = Array.from(elementsSet).map((element) =>
-    element.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  );
-  const regexPattern = escapedElements.join('|');
-  return new RegExp(regexPattern, 'g');
-}
+];
 
 function HTMLElements(str) {
-  const regExp = createRegexFromSet(validElements);
+  const regExp = new RegExp(validElements.join('|'), 'g');
   const stack = [];
+  const tags = str.match(regExp);
 
-  for (const tag of str.match(regExp) || []) {
+  for (const tag of tags) {
     if (tag.startsWith('</')) {
       const closingTagName = tag.substring(2, tag.length - 1);
       const openingTagName = stack.pop();
